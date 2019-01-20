@@ -16,4 +16,9 @@ Route::get('/', function () {
 });
 
 Route::any('/wechat', '\App\Http\Controllers\tuantuan\WeChatController@serve');
+Route::get('/post', function(){
+    return 'this is hello web';
+});
 Route::any('/oauth_callback', '\App\Http\Controllers\tuantuan\CallBackController@oauth_callback');
+Route::any('/menu/get', '\App\Http\Controllers\tuantuan\MenuController@getMenu');
+Route::any('/menu/set', '\App\Http\Controllers\tuantuan\MenuController@setMenu');
