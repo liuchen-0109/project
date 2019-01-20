@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class WeChatController extends Controller
 {
 
-    function serve(){
+    private $app ;
+    function  __construct()
+    {
         $config = [
             'app_id' => 'wxd4a50070d4f44a26',
             'secret' => 'a5d16852f75c1852c73c75bd061dff56',
@@ -17,9 +19,13 @@ class WeChatController extends Controller
             //...
         ];
 
-        $app = Factory::officialAccount($config);
+        $this->app = Factory::officialAccount($config);
+    }
 
-        $response = $app->server->serve();
+    function serve(){
+
+
+        $response = $this->app->server->serve();
 
         return $response;
     }
