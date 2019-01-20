@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
-
+use EasyWeChat\Kernel\Messages\Text;
 class WeChatController extends Controller
 {
 
-    private $app ;
-    function  __construct()
+    private $app;
+
+    function __construct()
     {
         $config = [
             'app_id' => 'wxd4a50070d4f44a26',
@@ -29,22 +30,24 @@ class WeChatController extends Controller
      * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
      * @throws \EasyWeChat\Kernel\Exceptions\InvalidConfigException
      */
-    function serve(){
+    function serve()
+    {
         $app = $this->app;
-         $this->message();
+        $this->message();//消息处理
         $response = $app->server->serve();
 
         return $response;
     }
 
-    function message(){
+    function message()
+    {
         $this->app->server->push(function ($message) {
             switch ($message['MsgType']) {
                 case 'event':
                     return '收到事件消息';
                     break;
                 case 'text':
-                    return '收到文字消息';
+                    return new Text('你好欢迎关注公众号。');
                     break;
                 case 'image':
                     return '收到图片消息';
