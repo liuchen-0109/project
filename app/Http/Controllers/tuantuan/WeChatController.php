@@ -13,12 +13,11 @@ class WeChatController extends Controller
 
     function __construct()
     {
-
         $this->app = Factory::officialAccount(Config('project.tuantuan'));
-//        $oauth = $this->app->oauth;
-//        if (empty($_SESSION['wechat_user'])) {
-//            return $oauth->redirect();
-//        }
+        $oauth = $this->app->oauth;
+        if (empty($_SESSION['wechat_user'])) {
+            return $oauth->redirect();
+        }
     }
 
     /**

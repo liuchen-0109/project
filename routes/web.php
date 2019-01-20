@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::any('/wechat', '\App\Http\Controllers\tuantuan\WeChatController@serve');
+Route::any('/oauth_callback', '\App\Http\Controllers\tuantuan\CallBackController@oauth_callback');
