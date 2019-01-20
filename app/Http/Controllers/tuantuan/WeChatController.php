@@ -46,7 +46,7 @@ class WeChatController extends Controller
             switch ($message['MsgType']) {
                 case 'event':
                     $user = $this->app->oauth->user();
-                    return '你的openid是'.$user->id;
+                    return '你的openid是'.$user->getId();
                     break;
                 case 'text':
                     return new Text('你好欢迎关注公众号。');
