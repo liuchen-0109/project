@@ -32,7 +32,7 @@ class WeChatController extends Controller
         $app = $this->app;
         $this->message();//消息处理
         $response = $app->server->serve();
-
+        redirect(url('/post'));
         return $response;
     }
 
