@@ -31,7 +31,7 @@ class WeChatController extends Controller
      */
     function serve(){
         $app = $this->app;
-        if($app->getMessage());  $this->message();
+         $this->message();
         $response = $app->server->serve();
 
         return $response;
