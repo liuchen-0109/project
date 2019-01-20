@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\WeChatBaseController as WeChat;
+
 class WeChatController extends Controller
 {
-    private $app;
-    function __construct()
-    {
-        $wechat = WeChat::getInstance('tuantuan');
-        $this->app = $wechat->getApp();
-    }
 
     function serve(){
+        $config = [
+            'app_id' => 'wxd4a50070d4f44a26',
+            'secret' => 'a5d16852f75c1852c73c75bd061dff56',
+            'token' => 'liuchen',
+            'response_type' => 'array',
+            //...
+        ];
 
-        $response = $this->app->get->server->serve();
+        $app = Factory::officialAccount($config);
+
+        $response = $app->server->serve();
 
         return $response;
     }
