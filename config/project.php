@@ -11,4 +11,16 @@ return [
         ],
 
     ],
+
+    'wen'=> [
+        'app_id' => 'wx788072032f7e5f22',
+        'secret' => '64c475903f6fa538216ff68f3d06e0e4',
+
+        'response_type' => 'array',
+
+        'log' => [
+            'level' => 'debug',
+            'file' => __DIR__.'/wechat.log',
+        ],
+    ]
 ];
