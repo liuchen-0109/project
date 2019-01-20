@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\tuantuan\Controllers;
 
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
