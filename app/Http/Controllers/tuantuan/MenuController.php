@@ -49,7 +49,7 @@ class MenuController extends Controller
                 ],
             ],
         ];
-        $this->app->menu->create($buttons);
+       return $this->app->menu->create($buttons);
     }
 
 }
