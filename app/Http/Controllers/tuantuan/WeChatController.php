@@ -45,7 +45,8 @@ class WeChatController extends Controller
         $this->app->server->push(function ($message) {
             switch ($message['MsgType']) {
                 case 'event':
-                    return '你的openid是12321';
+                    file_put_contents('1.txt',json_encode($message));
+                    return '你的openid是'.$message->FromUserName;
                     break;
                 case 'text':
                     return new Text('你好欢迎关注公众号。');
