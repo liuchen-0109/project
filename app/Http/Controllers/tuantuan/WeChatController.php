@@ -9,7 +9,7 @@ use EasyWeChat\Kernel\Messages\Text;
 class WeChatController extends Controller
 {
 
-    private $app;
+    protected $app;
 
     function __construct()
     {
@@ -45,7 +45,8 @@ class WeChatController extends Controller
         $this->app->server->push(function ($message) {
             switch ($message['MsgType']) {
                 case 'event':
-                    return '收到事件消息';
+                    $event = new EventController();
+                    return $event->handelEvent($message);
                     break;
                 case 'text':
                     return new Text('你好欢迎关注公众号。');
