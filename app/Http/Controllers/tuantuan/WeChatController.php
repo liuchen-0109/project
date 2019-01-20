@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\tuantuan;
 
+use App\Http\Controllers\Controller;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
 use EasyWeChat\Kernel\Messages\Text;
