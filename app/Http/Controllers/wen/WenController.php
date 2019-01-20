@@ -6,14 +6,14 @@ use App\Http\Controllers\Controller;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
 use EasyWeChat\Kernel\Messages\Text;
-class WeChatController extends Controller
+class WenController extends Controller
 {
 
     protected $app;
 
     function __construct()
     {
-        $this->app = Factory::officialAccount(Config('project.wen'));
+        $this->app = Factory::miniProgram(Config('project.wen'));
 
     }
 
