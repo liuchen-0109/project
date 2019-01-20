@@ -18,9 +18,9 @@ return [
 
         'response_type' => 'array',
 
-        'log' => [
-            'level' => 'debug',
-            'file' => __DIR__.'/wechat.log',
-        ],
+//        'log' => [
+//            'level' => 'debug',
+//            'file' => __DIR__.'/wechat.log',
+//        ],
     ]
 ];
