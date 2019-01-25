@@ -71,7 +71,7 @@ class LoginCOntroller extends Controller
         // 如果只提供了 code
         // 就用 code 解出来的 openid 去查数据库
         if ($code && !$encryptData && !$iv) {
-            $userInfo = User::where(['open_id'=>$openid])->find();
+            $userInfo = User::where(['open_id'=>$openid])->first();
             $wxUserInfo = json_decode($userInfo->user_info);
 
             // 更新登录态
@@ -184,7 +184,7 @@ class LoginCOntroller extends Controller
         $open_id = $userinfo->openId;
         $user_info = json_encode($userinfo);
 
-        $res = User::where(['open_id'=>$open_id])->find();
+        $res = User::where(['open_id'=>$open_id])->first();
         if (!$res) {
             $data = [];
             $data['uuid'] = $uuid;
