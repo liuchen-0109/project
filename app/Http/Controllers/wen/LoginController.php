@@ -181,6 +181,7 @@ class LoginCOntroller extends Controller
         $uuid = bin2hex(openssl_random_pseudo_bytes(16));
         $create_time = date('Y-m-d H:i:s');
         $last_visit_time = $create_time;
+        dd($userinfo);
         $open_id = $userinfo->open_id;
         $user_info = json_encode($userinfo);
 
