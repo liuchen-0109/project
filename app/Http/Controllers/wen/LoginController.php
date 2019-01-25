@@ -102,7 +102,7 @@ class LoginCOntroller extends Controller
             base64_decode($iv)
         );
         $userinfo = json_decode($decryptData);
-        var_dump($userinfo);
+        var_dump($decryptData);
         // 4. 储存到数据库中
         $this->storeUserInfo($userinfo, $skey, $session_key);
 
