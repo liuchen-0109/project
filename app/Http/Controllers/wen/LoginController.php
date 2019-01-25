@@ -74,6 +74,7 @@ class LoginCOntroller extends Controller
             $userInfo = User::where(['open_id'=>$openid])->first();
             $wxUserInfo = json_decode($userInfo->user_info);
 
+            echo  1;
             // 更新登录态
             $this->storeUserInfo($wxUserInfo, $skey, $session_key);
 
@@ -102,7 +103,7 @@ class LoginCOntroller extends Controller
         );
         $userinfo = json_decode($decryptData);
 
-        dd($userinfo);
+        echo 2;
         // 4. 储存到数据库中
         $this->storeUserInfo($userinfo, $skey, $session_key);
 
@@ -182,7 +183,6 @@ class LoginCOntroller extends Controller
         $uuid = bin2hex(openssl_random_pseudo_bytes(16));
         $create_time = date('Y-m-d H:i:s');
         $last_visit_time = $create_time;
-        dd($userinfo);
         $open_id = $userinfo->open_id;
         $user_info = json_encode($userinfo);
 
