@@ -98,7 +98,7 @@ class LoginCOntroller extends Controller
             base64_decode($encryptData),
             'AES-128-CBC',
             base64_decode($session_key),
-            OPENSSL_RAW_DATA,
+            1,
             base64_decode($iv)
         );
         $userinfo = json_decode($decryptData);
