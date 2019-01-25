@@ -18,5 +18,9 @@ Route::get('/', function () {
 Route::any('/wechat', '\App\Http\Controllers\tuantuan\WeChatController@serve');
 Route::any('/wen', '\App\Http\Controllers\wen\WenController@getOpenid');
 
+Route::group(['prefix'=>'weapp'],function(){
+    Route::get('login','\App\Http\Controllers\wen\LoginController@login');
+});
+
 
 

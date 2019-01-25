@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
 use EasyWeChat\Kernel\Messages\Text;
-class WenController extends Controller
+class LoginCOntroller extends Controller
 {
 
     protected $app;
@@ -17,9 +17,9 @@ class WenController extends Controller
 
     }
 
-    function getOpenid(Request $request){
-      $session = $this->app->auth->session($request['code']);
-        return $session['openid'];
+    public function login(){
+        return 1231312;
     }
+
 
 }
