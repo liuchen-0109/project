@@ -128,4 +128,13 @@ return [
     //          //...
     //      ],
     // ],
+    "wen" => [
+        'WX_HEADER_CODE' => 'x-wx-code',
+        'WX_HEADER_ENCRYPTED_DATA' => 'x-wx-encrypted-data',
+        'WX_HEADER_IV ' => 'x-wx-iv',
+        'WX_HEADER_SKEY' => 'x-wx-skey',
+        // 登录成功
+        'S_AUTH' => 1,
+        // 登录失败
+        'E_AUTH' => 0]
 ];
