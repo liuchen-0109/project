@@ -94,7 +94,7 @@ class LoginCOntroller extends Controller
          * 采用推荐的 openssl_decrypt 方法（支持 >= 5.3.0 的 PHP）
          * @see http://php.net/manual/zh/function.openssl-decrypt.php
          */
-        $decryptData = \openssl_decrypt(
+        $decryptData = openssl_decrypt(
             base64_decode($encryptData),
             'AES-128-CBC',
             base64_decode($session_key),
@@ -102,7 +102,7 @@ class LoginCOntroller extends Controller
             base64_decode($iv)
         );
         $userinfo = json_decode($decryptData);
-        var_dump($decryptData);
+        var_dump($userinfo);
         // 4. 储存到数据库中
         $this->storeUserInfo($userinfo, $skey, $session_key);
 
